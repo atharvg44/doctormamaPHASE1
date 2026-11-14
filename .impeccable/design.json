@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T00:00:00.000Z",
+  "title": "Design System: Doctor Mama",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Aged Paper",
+        "canonical": "#F1E7D3",
+        "tonalRamp": ["#E8DBC0", "#F1E7D3", "#F8F2E5"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Warm Ink",
+        "canonical": "#1A1409",
+        "tonalRamp": ["#1A1409", "#3A3223", "#6E6149"]
+      },
+      "almanac-red": {
+        "role": "secondary",
+        "displayName": "Almanac Red",
+        "canonical": "#A3231A",
+        "tonalRamp": ["#8E2411", "#A3231A", "#EFD8CC"]
+      },
+      "success": {
+        "role": "tertiary",
+        "displayName": "Quiet Green",
+        "canonical": "#2C4A32",
+        "tonalRamp": ["#2C4A32", "#E4EBDC"]
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Ink Ochre",
+        "canonical": "#5E3C08",
+        "tonalRamp": ["#5E3C08", "#F0E2C6"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Date numeral",
+        "purpose": "The masthead's day number, the one moment allowed to be monumental."
+      },
+      "headline": {
+        "displayName": "Screen question",
+        "purpose": "The single question a screen asks, in serif."
+      },
+      "body": {
+        "displayName": "Prose",
+        "purpose": "All readable sentences; never below 18sp, always 1.6 line height."
+      },
+      "field-label": {
+        "displayName": "Printed field name",
+        "purpose": "Tracked sans names for measured values: अंतर, पुढील भेट, आकृती 1."
+      },
+      "value": {
+        "displayName": "Measured value",
+        "purpose": "Times, distances, counts in serif with tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet",
+        "value": "0 10px 18px rgba(42, 32, 22, 0.16)",
+        "purpose": "The bottom sheet only. Every other layer of depth is a drawn rule or a paper shade."
+      }
+    ],
+    "motion": [
+      {
+        "name": "press",
+        "value": "transform 0.15s cubic-bezier(0.22, 1, 0.36, 1), scale 0.98",
+        "purpose": "Every pressable surface acknowledges the press without bouncing."
+      },
+      {
+        "name": "sheet-enter",
+        "value": "0.22s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Bottom sheet slides up over a warm ink scrim; reduced motion shows it in place."
+      },
+      {
+        "name": "stagger",
+        "value": "0.04s per item",
+        "purpose": "List and register items settle in order, never all at once."
+      }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "390px" },
+      { "name": "phone-large", "value": "430px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The dock action: 64dp, ink fill, paper words.",
+      "html": "<button class=\"ds-btn-primary\">बोलून सांगा</button>",
+      "css": ".ds-btn-primary { display:flex; align-items:center; justify-content:center; width:100%; height:64px; padding:0 20px; border:0; border-radius:0; background:#1A1409; color:#F1E7D3; font-family:'Noto Sans Devanagari',sans-serif; font-size:17px; font-weight:600; line-height:1.6; transition: background .15s cubic-bezier(.22,1,.36,1); } .ds-btn-primary:active { background:#33291A; transform:scale(.98); }"
+    },
+    {
+      "name": "SOS Button",
+      "kind": "button",
+      "refersTo": "button-emergency",
+      "description": "The emergency half of the dock: almanac red, 64dp, white SOS and मदत.",
+      "html": "<button class=\"ds-btn-sos\"><b>SOS</b><span>मदत</span></button>",
+      "css": ".ds-btn-sos { display:flex; flex-direction:column; align-items:center; justify-content:center; height:64px; width:100%; border:0; border-radius:0; background:#A3231A; color:#fff; font-family:'Noto Sans Devanagari',sans-serif; } .ds-btn-sos b { font-size:21px; letter-spacing:1.2px; line-height:1.2; } .ds-btn-sos span { font-size:12px; letter-spacing:1.4px; }"
+    },
+    {
+      "name": "Ruled Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A boxed paper field with a 3dp ink focus rule across its top edge.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">रुग्णाचे नाव</span><input class=\"ds-field-input\" value=\"श्रीमती कुलकर्णी\" /></label>",
+      "css": ".ds-field { display:block; } .ds-field-label { display:block; font-family:'Noto Serif Devanagari',Georgia,serif; font-size:18px; font-weight:600; line-height:1.6; color:#1A1409; margin-bottom:8px; } .ds-field-input { width:100%; height:64px; padding:8px 16px; border:1.5px solid #1A1409; border-radius:0; background:#F8F2E5; color:#1A1409; font-family:'Noto Serif Devanagari',Georgia,serif; font-size:20px; line-height:1.6; outline:none; caret-color:#1A1409; } .ds-field-input:focus { background:#F1E7D3; box-shadow: inset 0 3px 0 #1A1409; }"
+    },
+    {
+      "name": "Doctor Block",
+      "kind": "custom",
+      "description": "A ruled block with a red today stamp and three labelled cells: distance, clinic, language.",
+      "html": "<div class=\"ds-doctor\"><div class=\"ds-doctor-head\"><div><span class=\"ds-doctor-label\">तुमचे डॉक्टर</span><strong>डॉ. सुनील पाटील</strong><em>हृदयरोग तज्ज्ञ · कर्वेनगर</em></div><span class=\"ds-stamp\">आज 4:30</span></div><div class=\"ds-doctor-cells\"><div><span>अंतर</span><b>2.4 किमी</b></div><div><span>दवाखाना</span><b>कर्वेनगर</b></div><div><span>भाषा</span><b>मराठी</b></div></div></div>",
+      "css": ".ds-doctor { border:1.5px solid #1A1409; background:#F8F2E5; } .ds-doctor-head { display:flex; justify-content:space-between; gap:12px; padding:12px 14px 8px; } .ds-doctor-label { display:block; font-family:'Noto Sans Devanagari',sans-serif; font-size:12.5px; letter-spacing:1.1px; font-weight:600; color:#8E2411; } .ds-doctor-head strong { display:block; font-family:'Noto Serif Devanagari',Georgia,serif; font-size:21px; line-height:1.4; color:#1A1409; } .ds-doctor-head em { font-style:normal; font-family:'Noto Serif Devanagari',Georgia,serif; font-size:14px; color:#3A3223; } .ds-stamp { align-self:flex-start; border:1.5px solid #A3231A; color:#8E2411; padding:4px 7px; transform:rotate(-1.5deg); font-family:'Noto Serif Devanagari',Georgia,serif; font-weight:700; font-size:17px; } .ds-doctor-cells { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #1A1409; } .ds-doctor-cells div { padding:6px 12px 10px; border-right:1px solid rgba(26,20,9,.42); } .ds-doctor-cells div:last-child { border-right:0; } .ds-doctor-cells span { display:block; font-family:'Noto Sans Devanagari',sans-serif; font-size:11px; letter-spacing:.8px; color:#3A3223; } .ds-doctor-cells b { font-family:'Noto Serif Devanagari',Georgia,serif; font-size:16px; color:#1A1409; font-weight:600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The household almanac, fused with the family medical book",
+    "overview": "Doctor Mama is an older Marathi speaker's page, not a dashboard. It borrows the order of the दिनदर्शिका that hung by the door — a dated masthead, a 3dp ink rule, numbered entries, a red-ink stamp — and the warmth of the वैद्यकीय पुस्तक on the shelf: aged paper, a Devanagari serif, one line-drawn figure plate with its caption. Everything is ink on paper. There is no grey chrome, no floating card, and one red that means help is happening now.",
+    "keyCharacteristics": [
+      "Aged paper ground with warm ink, no white surfaces",
+      "Devanagari serif for everything read; sans for field labels and controls",
+      "Rules and paper shades instead of shadows",
+      "Square corners; circles only for objects — avatar, SOS ring, microphone",
+      "One line-drawn figure plate per screen, captioned",
+      "Almanac red reserved for SOS, the emergency call and today's stamp"
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "Red means help is happening now. SOS, the 108 call, and the stamp on today's visit. It never decorates a heading, a selected control or an icon.",
+        "section": "colors"
+      },
+      {
+        "name": "The Drawn Rule",
+        "body": "If a block needs to separate from the page, draw a rule or change the paper shade. Never add a drop shadow, a glow or a gradient.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Matra Floor",
+        "body": "Line height is always size × 1.6 and body text never falls below 18sp, because Devanagari matras sit above and below the baseline.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do set every line height at size × 1.6 and every body size at 18 or above.",
+      "Do draw a rule, change the paper shade, or add a stamp when something needs emphasis.",
+      "Do keep the number register two columns, each cell ≥56dp, the number in red ink.",
+      "Do put the primary action in the dock and the SOS in the same 34% slot on every screen.",
+      "Do write numbers in Latin digits and use commas, never middots.",
+      "Do verify text colour at ≥7:1 on its own ground before shipping a screen."
+    ],
+    "donts": [
+      "Don't use red for selection, validation, decoration or a heading.",
+      "Don't add a shadow, glow, gradient, blur or glass surface; the sheet's shadow is the ceiling.",
+      "Don't round a corner, except the 3dp sheet and the three circular objects.",
+      "Don't put a small tracked label above a heading; the heading carries its own weight.",
+      "Don't use a coloured left or right border above 1dp, or nest a card inside a card.",
+      "Don't use an icon without a word, or a placeholder as a label.",
+      "Don't let a tap target fall below 56dp or move a primary action to the top of the screen."
+    ]
+  }
+}
